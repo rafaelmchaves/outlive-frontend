@@ -81,8 +81,8 @@ const ProductForm = () => {
                 />
             </div>
             <div className="form-buttons">
-                <button>Cancel</button>
-                <button>Confirm</button>
+                <button className=".cancel-button ">Cancel</button>
+                <button type="submit">Confirm</button>
             </div>
         </div>
     );

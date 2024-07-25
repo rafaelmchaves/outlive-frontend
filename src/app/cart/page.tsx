@@ -50,16 +50,16 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-            <h1>Your Cart</h1>
+            <h1>Seu carrinho</h1>
             {errorMessage && <div className="error-message">{errorMessage}</div>}
             <table className="cart-table">
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
                         <th>Total</th>
-                        <th>Actions</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,8 +70,8 @@ const Cart = () => {
                             <td>{product.quantity}</td>
                             <td>${(product.price * product.quantity).toFixed(2)}</td>
                             <td>
-                                <button onClick={() => handleQuantityChange(product.id, 1)}>+</button>
-                                <button onClick={() => handleQuantityChange(product.id, -1)}>-</button>
+                                <button className='quantity-button' onClick={() => handleQuantityChange(product.id, 1)}>+</button>
+                                <button className='quantity-button' onClick={() => handleQuantityChange(product.id, -1)}>-</button>
                             </td>
                         </tr>
                     ))}
@@ -99,11 +99,11 @@ const Cart = () => {
                     <option value="">Selecionar um método de pagamento</option>
                     <option value="credit-card">Cartão de crédito</option>
                     <option value="paypal">PayPal</option>
-                    <option value="bank-transfer">PIX</option>
+                    <option value="bank-transfer">Pix</option>
                 </select>
             </div>
             <div className="confirm-section">
-                <button onClick={handleConfirm}>Confirmar pedido</button>
+                <button type="submit" onClick={handleConfirm}>Confirmar pedido</button>
             </div>
         </div>
     );
