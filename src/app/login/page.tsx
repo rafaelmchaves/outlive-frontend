@@ -14,9 +14,9 @@ function LoginPage() {
         if (username === 'admin' && password === 'password') {
             setErrorMessage('');
             // Login successful (redirect or handle accordingly)
-            console.log('Login successful!');
+            console.log('Logado com sucesso');
         } else {
-            setErrorMessage('Invalid username or password');
+            setErrorMessage('Email ou Senha incorreta');
         }
     };
 
@@ -25,14 +25,14 @@ function LoginPage() {
             <h1>Login</h1>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="username">email:</label>
                 <input
                     type="text"
                     id="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password">senha:</label>
                 <input
                     type="password"
                     id="password"
