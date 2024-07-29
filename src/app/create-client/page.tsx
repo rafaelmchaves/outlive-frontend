@@ -6,10 +6,11 @@ import React, { useState } from 'react';
 const CreateClient = () => {
     const [product, setProduct] = useState({
         name: '',
-        description: '',
-        type: '',
-        price: '',
-        fraction: ''
+        email: '',
+        cep: '',
+        address: '',
+        city: '',
+        phone: ''
     });
 
     // const handleChange = (e) => {
@@ -35,7 +36,7 @@ const CreateClient = () => {
 
     return (
         <div className="product-form">
-            <h1>Order a product</h1>
+            <h1>Cadastrar de cliente</h1>
             <div className="form-group">
                 <label>Nome:</label>
                 <input
@@ -46,34 +47,43 @@ const CreateClient = () => {
                 />
             </div>
             <div className="form-group">
+                <label>Email:</label>
+                <input
+                    type="text"
+                    name="email"
+                    value={product.email}
+                // onChange={handleChange}
+                />
+            </div>
+            <div className="form-group">
                 <label>CEP:</label>
                 <textarea
-                    name="description"
-                    value={product.description}
+                    name="cep"
+                    value={product.cep}
                 // onChange={handleChange}
                 />
             </div>
             <div className="form-group">
                 <label>Endereço:</label>
                 <textarea
-                    name="description"
-                    value={product.description}
+                    name="address"
+                    value={product.address}
                 // onChange={handleChange}
                 />
             </div>
             <div className="form-group">
                 <label>Cidade:</label>
                 <textarea
-                    name="description"
-                    value={product.description}
+                    name="city"
+                    value={product.city}
                 // onChange={handleChange}
                 />
             </div>
             <div className="form-group">
                 <label>Telefone:</label>
                 <textarea
-                    name="description"
-                    value={product.description}
+                    name="phone"
+                    value={product.phone}
                 // onChange={handleChange}
                 />
             </div>
