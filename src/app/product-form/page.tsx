@@ -35,9 +35,9 @@ const ProductForm = () => {
 
     return (
         <div className="product-form">
-            <h1>Create New Product</h1>
+            <h1>Cadastrar novo produto</h1>
             <div className="form-group">
-                <label>Name:</label>
+                <label>Nome:</label>
                 <input
                     type="text"
                     name="name"
@@ -46,7 +46,7 @@ const ProductForm = () => {
                 />
             </div>
             <div className="form-group">
-                <label>Description:</label>
+                <label>Descrição:</label>
                 <textarea
                     name="description"
                     value={product.description}
@@ -54,7 +54,7 @@ const ProductForm = () => {
                 />
             </div>
             <div className="form-group">
-                <label>Type:</label>
+                <label>Tipo:</label>
                 <input
                     type="text"
                     name="type"
@@ -63,7 +63,7 @@ const ProductForm = () => {
                 />
             </div>
             <div className="form-group">
-                <label>Price:</label>
+                <label>Preço:</label>
                 <input
                     type="text"
                     name="price"
@@ -72,7 +72,7 @@ const ProductForm = () => {
                 />
             </div>
             <div className="form-group">
-                <label>Fraction:</label>
+                <label>Peso:</label>
                 <input
                     type="text"
                     name="fraction"
@@ -81,8 +81,8 @@ const ProductForm = () => {
                 />
             </div>
             <div className="form-buttons">
-                <button className=".cancel-button ">Cancel</button>
-                <button type="submit">Confirm</button>
+                <button className=".cancel-button ">Cancelar</button>
+                <button type="submit">Cadastrar</button>
             </div>
         </div>
     );
