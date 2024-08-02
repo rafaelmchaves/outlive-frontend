@@ -12,6 +12,9 @@ const ProductForm = () => {
         fraction: ''
     });
 
+    const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setProduct((prevForm) => ({
@@ -33,12 +36,15 @@ const ProductForm = () => {
     const handleConfirm = () => {
         // Handle the form submission logic here, e.g., sending the product data to a server
         console.log('Product created:', product);
+        setSuccessMessage("Produto criado com sucesso");
         handleCancel(); // Reset form after submission
     };
 
     return (
         <div className="product-form">
             <h1>Cadastrar novo produto</h1>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            {successMessage && <p className="success-message">{successMessage}</p>}
             <div className="form-group">
                 <label>Nome:</label>
                 <input
