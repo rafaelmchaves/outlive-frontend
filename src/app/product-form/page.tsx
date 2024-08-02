@@ -12,26 +12,29 @@ const ProductForm = () => {
         fraction: ''
     });
 
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setProduct({ ...product, [name]: value });
-    // };
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setProduct((prevForm) => ({
+            ...prevForm,
+            [name]: value,
+        }));
+    };
 
-    // const handleCancel = () => {
-    //     setProduct({
-    //         name: '',
-    //         description: '',
-    //         type: '',
-    //         price: '',
-    //         fraction: ''
-    //     });
-    // };
+    const handleCancel = () => {
+        setProduct({
+            name: '',
+            description: '',
+            type: '',
+            price: '',
+            fraction: ''
+        });
+    };
 
-    // const handleConfirm = () => {
-    //     // Handle the form submission logic here, e.g., sending the product data to a server
-    //     console.log('Product created:', product);
-    //     handleCancel(); // Reset form after submission
-    // };
+    const handleConfirm = () => {
+        // Handle the form submission logic here, e.g., sending the product data to a server
+        console.log('Product created:', product);
+        handleCancel(); // Reset form after submission
+    };
 
     return (
         <div className="product-form">
@@ -42,7 +45,7 @@ const ProductForm = () => {
                     type="text"
                     name="name"
                     value={product.name}
-                // onChange={handleChange}
+                    onChange={handleChange}
                 />
             </div>
             <div className="form-group">
@@ -50,7 +53,7 @@ const ProductForm = () => {
                 <textarea
                     name="description"
                     value={product.description}
-                // onChange={handleChange}
+                    onChange={handleChange}
                 />
             </div>
             <div className="form-group">
@@ -59,7 +62,7 @@ const ProductForm = () => {
                     type="text"
                     name="type"
                     value={product.type}
-                // onChange={handleChange}
+                    onChange={handleChange}
                 />
             </div>
             <div className="form-group">
@@ -68,7 +71,7 @@ const ProductForm = () => {
                     type="text"
                     name="price"
                     value={product.price}
-                // onChange={handleChange}
+                    onChange={handleChange}
                 />
             </div>
             <div className="form-group">
@@ -77,12 +80,12 @@ const ProductForm = () => {
                     type="text"
                     name="fraction"
                     value={product.fraction}
-                // onChange={handleChange}
+                    onChange={handleChange}
                 />
             </div>
             <div className="form-buttons">
-                <button className=".cancel-button ">Cancelar</button>
-                <button type="submit">Cadastrar</button>
+                <button className=".cancel-button " onClick={handleCancel}>Cancelar</button>
+                <button type="submit" onClick={handleConfirm}>Cadastrar</button>
             </div>
         </div>
     );
