@@ -11,7 +11,10 @@ const Header: React.FC = () => {
                 <li><a href="/">Home</a></li>
                 <li><a href="product-form">Criar Produto</a></li>
                 <li><a href="products-list">Lista de Produtos</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="order-list">Pedidos</a></li>
+                <li><a href="create-client">Cadastrar cliente</a></li>
+                <li><a href="client-list">Clientes</a></li>
+                <li><a href="expenses">Gastos</a></li>
             </ul>
         </div>
     );
