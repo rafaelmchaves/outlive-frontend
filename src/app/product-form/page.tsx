@@ -2,6 +2,16 @@
 
 import "./page.css";
 import React, { useState } from 'react';
+import { saveProduct } from '../../api/productService';
+
+interface Product {
+    name: string;
+    type: string;
+    description: string;
+    price: string;
+    fraction: string;
+    sellerId: string;
+}
 
 const ProductForm = () => {
     const [product, setProduct] = useState({
@@ -29,13 +39,23 @@ const ProductForm = () => {
             description: '',
             type: '',
             price: '',
-            fraction: ''
+            fraction: '',
         });
     };
 
     const handleConfirm = () => {
         // Handle the form submission logic here, e.g., sending the product data to a server
         console.log('Product created:', product);
+        const newProduct: Product = {
+            name: product.name,
+            description: product.description,
+            type: 'MARMITA_CONGELADA',
+            price: product.price,
+            fraction: product.fraction,
+            sellerId: 'de497f7e-8e6c-4b61-bf25-c547f4b652f1'
+        };
+
+        saveProduct(newProduct);
         setSuccessMessage("Produto criado com sucesso");
         handleCancel(); // Reset form after submission
     };
@@ -67,8 +87,7 @@ const ProductForm = () => {
                 <input
                     type="text"
                     name="type"
-                    value={product.type}
-                    onChange={handleChange}
+                    value='MARMITA_CONGELADA'
                 />
             </div>
             <div className="form-group">
