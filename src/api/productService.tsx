@@ -6,17 +6,7 @@ const API_BASE_URL = 'http://localhost:8080';
 const SAVE_PRODUCT_ENDPOINT = '/products';
 const GET_PRODUCT_ENDPOINT = '/sellers/de497f7e-8e6c-4b61-bf25-c547f4b652f1/products';
 
-interface Product {
-    id?: string;
-    name: string;
-    type: string;
-    description: string;
-    price: string;
-    fraction: string;
-    sellerId: string;
-    status?: string
-    image?: string
-}
+import { Product } from '../types/Product';
 
 export const saveProduct = async (product: Product) => {
     try {
