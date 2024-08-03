@@ -60,7 +60,7 @@ const ProductList: React.FC = () => {
                             </div>
                         ))
                     ) : (
-                        <p>No products found</p>
+                        <p>Não foi encontrado produtos com essa busca</p>
                     )}
                 </div>
             </header>
