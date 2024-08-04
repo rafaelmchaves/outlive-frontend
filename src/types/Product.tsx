@@ -3,9 +3,10 @@ export interface Product {
     name: string;
     type: string;
     description: string;
-    price: string;
+    price: number;
     fraction: string;
     sellerId: string;
     status?: string;
     image?: string;
+    quantity?: number
 }
