@@ -154,7 +154,7 @@ const ProductList: React.FC = () => {
                         ))}
                     </tbody>
                 </table>
-                <p>Total Price: R$ {getTotalPrice().toFixed(2).replace('.', ',')}</p>
+                <p>Total Price: <b>R$ {getTotalPrice().toFixed(2).replace('.', ',')}</b></p>
                 <div className="address-section">
                     <h2>Address</h2>
                     <select value={selectedAddress} onChange={(e) => setSelectedAddress(e.target.value)}>
